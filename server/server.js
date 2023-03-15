@@ -3,11 +3,11 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true }, (err) =>
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true }, (err) =>
   console.log(err)
 );
 
-app.listen(9000, () => console.log(`connected at 9000`));
+app.listen(4444, () => console.log(`connected at 4444`));
 
 // const User = require("./models/user");
 const City = require("./models/city");
