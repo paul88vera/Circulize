@@ -1,0 +1,439 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  max-width: 900px;
+  margin: 0 auto;
+}
+/*-------------------
+    ICONS - START
+ -------------------*/
+ .fa-mobile-screen-button, .fa-map-location-dot, .fa-laptop {
+  color: rgb(242, 204, 138);
+  font-size: 2rem;
+ }
+.fa-circle-chevron-left, .fa-gg-circle, .fa-bars {
+  padding: 1em;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  gap: 0;
+}
+.icon-container span {
+  color: black;
+  padding: 1em 0;
+}
+.fa-location-dot {
+  position: relative;
+  z-index: 9999;
+  top:15px;
+  left: 85%;
+  color: #fff;
+}
+/*-------------------
+    SPLASH - START
+ -------------------*/
+ #splash-container{
+  width: 100%;
+  height: 100vh;
+  background-image: url(/src/images/splash.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: top;
+} 
+.input-container input {
+	padding-bottom: 1em;
+}
+#search-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 0 auto;
+}
+#search-container input {
+  width: 100%;
+  max-width: 890px;
+  padding: .5em 1em !important;
+  margin: 1em  auto !important;
+  box-sizing: border-box;
+  font-size: 20px;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+input:focus{
+  outline-width: 0;
+}
+#search-container ::placeholder {
+  color: #fff;
+}
+.right-inner-addon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+    font-size: 20px;
+    width: 90%;
+    max-width: 850px;
+    color: #ffffff;
+}
+.form-control {
+  position: relative;
+}
+.right-inner-addon i {
+  position: absolute;
+  right: 10px;
+  top: 17px;
+  font-size: 24px;
+  padding: 13px;
+  pointer-events: none;
+  color: #ffffff;
+}
+.right-inner-addon i:hover {
+  cursor: pointer;
+}
+/*----------------------
+ LOGIN INPUT - START
+ ----------------------*/
+#login-container{
+  width: 100%;
+  height: 100vh;
+  background-image: url(/src/images/splash.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: top;
+  position: relative;
+} 
+#login-form{
+  height: auto;
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 17%;
+}
+#login-form input, #login-form button {
+  display: block;
+  box-sizing: border-box;
+  padding: 1.2em 1.5em;
+  border-radius: 50px;
+  border: none;
+  width: 80%;
+  font-size: 20px;
+  margin: 0 auto;
+}
+#login-form input {
+  background-color: rgba(0, 0, 0, 0.53);
+  backdrop-filter:blur(2px);
+  border: rgb(88, 88, 88) solid 1px;
+  color: #fff;
+}
+#login-form ::placeholder {
+  color: #fff;
+}
+#login-form button {
+  background-color: rgb(36, 112, 61);
+  color: #fff;
+  font-weight: 600;
+}
+#login-form button:hover {
+  cursor: pointer;
+  background-color: rgb(23, 73, 39);
+}
+#login-form .signup-para {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+#login-form .signup-para:hover {
+  color: rgb(11, 235, 255);
+}
+/*-------------------
+    SIGNUP - START
+ --------------------*/
+#signup-container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: top;
+  position: relative;
+  color: #fff;
+}
+#signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: #fff;
+  max-width: 100%;
+  margin-top: 8em;
+}
+#signup-form label {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  font-size: 14px;
+}
+#signup-form input {
+  background-color: transparent;
+  border: none;
+  padding: .6em 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: solid #fff 1px;
+}
+#signup-form ::placeholder{
+  color: rgba(255, 255, 255, 0.314);
+  font-weight: 600;
+  font-size: 20px;
+}
+#signup-form button {
+  background-color: rgb(36, 112, 61);
+  color: #fff;
+  font-weight: 600;
+  padding: 1.5rem 2rem;
+  font-size: 18px;
+  border: none;
+  width: 70%;
+  border-radius: 50px;
+}
+#signup-form button:hover {
+  cursor: pointer;
+  background-color: rgb(23, 73, 39);
+}
+/*-----------------
+   NAVBAR - START  
+-------------------*/
+#navbar {
+  width: 100%;
+  max-width: 900px;
+  height: 9vh;
+  margin-top: .5em;
+  border-radius: 50px;
+  background-color: rgb(23, 73, 39);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: absolute;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+/*-------------------
+   HOME - START  
+------------------*/
+#main-banner img {
+  box-sizing: border-box;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+/*-------------------
+   CUISINE - START 
+------------------*/
+.cuisine-main-link {
+  text-decoration: none;
+  color: inherit;
+}
+#cuisine-choices {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+#cuisine-choices h4 {
+  font-family: sans-serif;
+  font-size: 22px;
+  font-weight: 100;
+}
+#cuisine {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 2em;
+  
+}
+#cuisine-card-container {
+  width: 95%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+.desc {
+  bottom: -20px;
+  left: 0px;
+  position: relative;
+}
+.cuisine-type {
+  width: 100px;
+  max-width: 50px;
+  height: 10px;
+  padding: .5em 1em;
+  border-radius: 20px;
+  color: #fff;
+  margin: 1em;
+}
+.cuisine-type h2 {
+  position: relative;
+  font-size: 20px;
+  top: 15px;
+  left: -20px;
+}
+/*---------------------
+ RESTAURANT DETAILS - START 
+ ----------------------*/
+#restaurant {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+}
+.restaurant-details {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: left;
+  margin: 1em;
+}
+#social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1em 0;
+}
+#social-links img:nth-child(n-1) {
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+/*TODO: Complete the Restaurant Item component & Browse Page */
+/*--------------
+  BROWSE - START
+ --------------*/
+ .mexican, .seafood, .american, .italian, .asian, .barbecue {
+  box-sizing: border-box;
+  width: inherit;
+  height: inherit;
+  border-radius: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+ }
+ .mexican {
+  background-image: url(../src/images/mexican.jpeg);
+ }
+ .seafood {
+  background-image: url(../src/images/seafood.jpeg);
+ }
+ .american {
+  background-image: url(../src/images/american.jpeg);
+ }
+ .italian {
+  background-image: url(../src/images/italian.jpeg);
+ }
+ .barbecue {
+  background-image: url(../src/images/bbq.jpeg);
+ }
+ .asian {
+  background-image: url(../src/images/asian.jpeg);
+ }
+/*-------------------------
+  RESTAURANT CARDS  - START
+ -------------------------*/
+.cuisine-gallery {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+}
+ #cuisine-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 1em;
+  margin: 1em auto;
+  align-items: center;
+ }
+ .cuisine-title {
+  text-align: center;
+  padding: 1em;
+  font-size: 1.5rem;
+  font-weight: 300;
+ }
+ .cuisine-card {
+  display: flex;
+  flex-direction: row;
+  height: 91px;
+  min-width: 320px;
+  width: auto;
+  max-width: 600px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: rgba(121, 121, 121, 0.541) 0px 1px 10px;
+ }
+ .cuisine-card-img {
+  box-sizing: border-box;
+}
+.cuisine-card-img img {
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+  height: max-content;
+ }
+ .cuisine-card-text {
+  padding: .5em;
+  font-size: 1rem;
+ }
+@media screen and (min-width:468px) {
+  .cuisine-card {
+    width: 100%;
+  }
+}
+ @media screen and (min-width: 768px) {
+  .cuisine-type {
+    max-width: 200px;
+  }
+  .desc {
+    left: 15px;
+    font-size: 1.2rem;
+  }
+  #cuisine-choices h4 {
+    font-size: 2rem;
+  }
+  #main-banner img {
+    max-height: 400px;
+    background-size: cover;
+  }
+  .cuisine-title {
+    font-size: 2rem;
+    font-weight: 200;
+  }
+  .cuisine-card {
+    max-width: 600px;
+  }
+  .fa-circle-chevron-left, .fa-gg-circle, .fa-bars {
+    font-size: 2rem;
+  }
+  .fa-location-dot {
+    left: 93%;
+  }
+ }
