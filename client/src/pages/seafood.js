@@ -9,7 +9,7 @@ import Selection from '../props/selection';
 const Seafood = () => {
   const [selectionData] = useState([
     {
-      id: 1,
+      _id: 1,
       img: 'https://s3.amazonaws.com/circulate.com/assets/images/seafood.jpeg',
       alt: "This is an alt image",
       city: "San Antonio",
@@ -17,7 +17,7 @@ const Seafood = () => {
       name: "Goggi Street",
     },
     {
-      id: 2,
+      _id: 2,
       img: 'https://s3.amazonaws.com/circulate.com/assets/images/seafood.jpeg',
       alt: "This is an alt image",
       city: "San Antonio",
@@ -25,19 +25,18 @@ const Seafood = () => {
       name: "Don Pedro's Too",
     },
   ])
-    return (
-      <div className="cuisine-gallery">
-        <Navbar />
-        <Banner />
-        <h4 className='cuisine-title'>Seafood</h4>
+  return (
+    <div className="cuisine-gallery">
+      <Navbar />
+      <Banner />
+      <h4 className='cuisine-title'>Seafood</h4>
 
-        <Selection
+      <Selection
         selection={selectionData}
-        key={selectionData.id}
       />
-        
-      </div>
-    );
-  }
+
+    </div>
+  );
+}
 
 export default Seafood;
