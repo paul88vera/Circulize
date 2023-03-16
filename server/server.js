@@ -9,6 +9,8 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true }, (err) =>
 
 app.listen(9000, () => console.log(`connected at 9000`));
 
+// app.use("/", city);
+
 // const User = require("./models/user");
 const City = require("./models/city");
 const Restaurant = require("./models/restaurant");
@@ -16,7 +18,7 @@ const Restaurant = require("./models/restaurant");
 // ONE user
 
 // ALL Cities
-// getCities();
+getCities();
 async function getCities() {
   try {
     const getMyCity = await City.find();
@@ -38,7 +40,7 @@ async function getCity(city) {
 }
 
 // ALL Restaurants in City
-// getRestaurant();
+getRestaurant();
 async function getRestaurant() {
   try {
     const getOneRestaurant = await Restaurant.find();
