@@ -1,8 +1,5 @@
 import { useState } from 'react';
 
-import Navbar from '../components/Navbar';
-import Banner from '../components/Banner';
-
 import Selection from '../props/selection';
 
 
@@ -27,8 +24,6 @@ const Seafood = () => {
   ])
   return (
     <div className="cuisine-gallery">
-      <Navbar />
-      <Banner />
       <h4 className='cuisine-title'>Seafood</h4>
 
       <Selection
