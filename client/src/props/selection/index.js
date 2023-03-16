@@ -8,7 +8,7 @@ export default function Selection(props) {
 
   const [restaurantData] = useState([
     {
-      id: 1,
+      _id: 1,
       image: "#",
       imgAlt: "this is another alt statement",
       name: "Not Dons",
@@ -21,22 +21,22 @@ export default function Selection(props) {
   ]);
   return (
     <section id="cuisine-card-container">
-      {selection.map((selection) => (
+      {selection.map((sel) => (
         <div
           className="cuisine-card"
-          key={selection.id}
+          key={sel._id}
           style={{ cursor: "pointer" }}
           onClick={() => {
             setOpenModal(true);
           }}
         >
           <div className="cuisine-card-img">
-            <img src={selection.img} alt={selection.alt} width="100" />
+            <img src={sel.img} alt={sel.alt} width="100" />
           </div>
           <div className="cuisine-card-text">
-            <h4>{selection.city}</h4>
-            <p>{selection.cuisine}</p>
-            <h3>{selection.name}</h3>
+            <h4>{sel.city}</h4>
+            <p>{sel.cuisine}</p>
+            <h3>{sel.name}</h3>
           </div>
         </div>
       ))}
