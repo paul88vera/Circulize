@@ -28,7 +28,7 @@ export default function Selection(props) {
               <img src={sel.img} alt={sel.alt} width="100" />
             </div>
             <div className="cuisine-card-text">
-              <h4>{sel.city}</h4>
+              <h4>{sel.address.city}</h4>
               <p>{sel.cuisine}</p>
               <h3>{sel.name}</h3>
             </div>

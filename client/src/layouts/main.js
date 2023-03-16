@@ -6,6 +6,7 @@ import Home from '../pages/home';
 import Browse from '../pages/browse';
 import Login from '../pages/login';
 import Signup from '../pages/signup';
+import AddRestaurant from '../pages/createRestaurant';
 import Splash from '../pages/splash';
 import Error from '../pages/error'
 import RestaurantPage from '../props/selection';
@@ -29,6 +30,7 @@ export default function Layout() {
                 <Routes>
                     <Route index path="/" element={<Home />} />
                     <Route path='/search' element={<Splash />} />
+                    <Route path='/add' element={<AddRestaurant />} />
                     <Route path="SanAntonio/Mexican" element={<RestaurantPage title="Mexican" data={selectionData} />} />
                     <Route path="SanAntonio/Seafood" element={<RestaurantPage title="Seafood" data={selectionData} />} />
                     <Route path="SanAntonio/Italian" element={<RestaurantPage title="Italian" data={selectionData} />} />

@@ -21,27 +21,31 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/cities", async (req, res) => res.json(await City.find()))
+app.post("/cities", submitCity)
 app.get("/restaurants", async (req, res) => res.json(await Restaurant.find()))
-app.post("/cities", submitCitySmart)
+app.post("/restaurants", submitRestaurant)
+app.get("/restaurants/:id", getRestaurantType)
 
 app.listen(4444, () => console.log(`listening on port 4444`));
+
 // Submit New City
-async function submitCity(city, state) {
+async function submitCity(req, res) {
   try {
-    const entry = new City({ city: city, state: state })
-    await entry.save()
+    const entry = new City(req.body)
+    await entry.save().then(() => res.send('City Submitted'))
   } catch (err) {
     console.error(err)
   }
 }
 
-function submitCitySmart(req, res) {
-  submitCity(req.body.city, req.body.state).then(() => {
-    res.send({
-      'city': req.body.city,
-      'state': req.body.state
-    });
-  })
+// Submit New Restaurant
+async function submitRestaurant(req, res) {
+  try {
+    const entry = new Restaurant(req.body)
+    await entry.save().then(() => res.send('Restaurant Submitted'))
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 // // ONE user
@@ -57,12 +61,10 @@ function submitCitySmart(req, res) {
 //   }
 // }
 
-// ALL Restaurants in City
-
-async function getRestaurant() {
+async function getRestaurantType(req, res) {
   try {
-    const getOneRestaurant = await Restaurant.find();
-    console.log(getOneRestaurant);
+    const getRestaurant = await Restaurant.find({ cuisine: `${req.params.id}` });
+    res.send(getRestaurant)
   } catch (err) {
     console.log(err.message);
   }
