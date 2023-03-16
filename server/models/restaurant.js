@@ -13,6 +13,6 @@ const restaurantSchema = new Schema({
   website: { type: String, required: true },
   bio: String,
   type: { type: String, required: true },
-});
+}, { versionKey: false });
 
 module.exports = mongoose.model("Restaurant", restaurantSchema);
