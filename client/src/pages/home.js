@@ -8,13 +8,12 @@ export default function Home() {
     <div id='home'>
       <Navbar />
       <Banner />
-<br/>
-      <section id='cuisine-choices'>
-      <h4>What are you looking for?</h4>
-<br/>
-      <br/>
-      <Cuisine />
+      <section id='cuisine-choices' style={{ textAlign: 'center' }}>
+        <h4>What are you looking for?</h4>
+        <br />
+        <br />
+        <Cuisine />
       </section>
-    </div>
+    </div >
   );
 }
