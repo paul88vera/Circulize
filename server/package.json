@@ -1,12 +1,5 @@
 {
   "name": "@circulize-app/rf-server",
   "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "devStart": "nodemon server.js"
-  }
+  "private": true
 }
