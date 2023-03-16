@@ -6,19 +6,13 @@ export default function Selection(props) {
 
   const [openModal, setOpenModal] = useState(false);
 
-  const [restaurantData] = useState([
-    {
-      _id: 1,
-      image: "#",
-      imgAlt: "this is another alt statement",
-      name: "Not Dons",
-      cuisine: "Mexican",
-      details: "This is a really cool Mexican restaurant",
-      phone: "tel:888-888-8888",
-      map: "https://maps.google.com/",
-      website: "https://google.com/",
-    },
-  ]);
+  const [restaurantData, setRestaurantData] = useState();
+
+  function handleClick(selection) {
+    setRestaurantData(selection)
+    setOpenModal(true);
+  }
+
   return (
     <section id="cuisine-card-container">
       {selection.map((sel) => (
@@ -26,9 +20,7 @@ export default function Selection(props) {
           className="cuisine-card"
           key={sel._id}
           style={{ cursor: "pointer" }}
-          onClick={() => {
-            setOpenModal(true);
-          }}
+          onClick={() => handleClick(sel)}
         >
           <div className="cuisine-card-img">
             <img src={sel.img} alt={sel.alt} width="100" />
