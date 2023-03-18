@@ -30,6 +30,6 @@ const userSchema = new Schema({
     type: Date,
     default: () => Date.now(),
   },
-});
+}, { versionKey: false });
 
 userSchema.module.exports = mongoose.model("User", userSchema);

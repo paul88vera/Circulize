@@ -1,4 +1,5 @@
-const router = expess()
+const express = require("express");
+const router = express()
 
 // Get a list of cities
 router.get("/", async (req, res) => {

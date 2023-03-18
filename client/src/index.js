@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./tailwind.generated.css";
 // import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 // const client = new ApolloClient({
@@ -12,9 +13,7 @@ import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <>
-    <App />
-  </>
+  <App />
 );
 
 // If you want to start measuring performance in your app, pass a function
