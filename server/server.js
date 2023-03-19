@@ -25,6 +25,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+// routes
 app.get("/cities", async (req, res) => res.json(await City.find()));
 app.post("/cities", submitCity);
 app.get("/restaurants", async (req, res) => res.json(await Restaurant.find()));
