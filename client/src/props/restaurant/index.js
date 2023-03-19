@@ -6,7 +6,7 @@ export default function Restaurant({ data, closeModal }) {
           <img src={data.image} width="100%" alt={data.imgAlt} />
         </picture>
         <button className="close-btn" onClick={() => closeModal(false)}>
-          X
+          close
         </button>
         <div className="restaurant-details">
           <h2>{data.name}</h2>
