@@ -233,8 +233,7 @@ input:focus{
 ------------------*/
 #main-banner img {
   box-sizing: border-box;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
 }
 /*-------------------
    CUISINE - START 
@@ -325,7 +324,6 @@ input:focus{
   align-items: center;
   align-content: center;
 }
-/*TODO: Complete the Restaurant Item component & Browse Page */
 /*--------------
   BROWSE - START
  --------------*/

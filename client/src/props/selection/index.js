@@ -2,21 +2,22 @@ import { useState } from "react";
 import Restaurant from "../restaurant";
 
 export default function Selection(props) {
-
   const [openModal, setOpenModal] = useState(false);
 
   const [restaurantData, setRestaurantData] = useState();
 
   function handleClick(selection) {
-    setRestaurantData(selection)
+    setRestaurantData(selection);
     setOpenModal(true);
   }
 
   return (
-
     <div className="cuisine-gallery">
       <h4 className="cuisine-title">{props.title}</h4>
       <section id="cuisine-card-container">
+        {openModal && (
+          <Restaurant data={restaurantData} closeModal={setOpenModal} />
+        )}
         {props.data.map((sel) => (
           <div
             className="cuisine-card"
@@ -25,19 +26,15 @@ export default function Selection(props) {
             onClick={() => handleClick(sel)}
           >
             <div className="cuisine-card-img">
-              <img src={sel.img} alt={sel.alt} width="100" />
+              <img src={sel.image} alt={sel.imgAlt} width="136" />
             </div>
             <div className="cuisine-card-text">
-              <h4>{sel.address.city}</h4>
-              <p>{sel.cuisine}</p>
               <h3>{sel.name}</h3>
+              <h4>{sel.address.city}</h4>
+              <p>{sel.type}</p>
             </div>
           </div>
         ))}
-
-        {openModal && (
-          <Restaurant data={restaurantData} closeModal={setOpenModal} />
-        )}
       </section>
     </div>
   );
