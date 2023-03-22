@@ -5,14 +5,11 @@ export default function Restaurant({ data, closeModal }) {
         <picture id="main-banner">
           <img src={data.image} width="100%" alt={data.imgAlt} />
         </picture>
-        <button className="close-btn" onClick={() => closeModal(false)}>
-          close
-        </button>
         <div className="restaurant-details">
           <h2>{data.name}</h2>
           <h4>{data.type}</h4>
           <br />
-          <p>{data.bio}</p>
+          <p className="restaurant-para">{data.bio}</p>
         </div>
         <br />
         <div id="social-links">
@@ -29,6 +26,9 @@ export default function Restaurant({ data, closeModal }) {
             <span>Website</span>
           </a>
         </div>
+        <button className="close-btn" onClick={() => closeModal(false)}>
+          close
+        </button>
       </div>
     </section>
   );

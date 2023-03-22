@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   max-width: 900px;
   margin: 0 auto;
@@ -34,6 +35,14 @@ body {
   top:15px;
   left: 85%;
   color: #fff;
+}
+/*-------------------
+    HEADER - START
+ -------------------*/
+#header {
+  margin: 0 auto;
+  position: fixed;
+  z-index: 9999;
 }
 /*-------------------
     SPLASH - START
@@ -231,9 +240,14 @@ input:focus{
 /*-------------------
    HOME - START  
 ------------------*/
+#main-banner {
+  max-width: 900px;
+}
 #main-banner img {
   box-sizing: border-box;
   border-radius: 2px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 /*-------------------
    CUISINE - START 
@@ -309,6 +323,10 @@ input:focus{
   text-align: left;
   margin: 1em;
 }
+.restaurant-para {
+  max-height: 120px;
+  overflow: scroll;
+}
 #social-links {
   display: flex;
   flex-direction: row;
@@ -328,6 +346,13 @@ input:focus{
   box-shadow: inset 0 0 5px #ddd;
   border-radius: 10px;
   padding: 1em;
+  background-color: #fff;
+  max-width: 600px;
+  position: fixed;
+  overflow-y: scroll;
+  top: 20px;
+  left: 0;
+  height: fit-content;
 }
 /*--------------
   BROWSE - START
@@ -407,12 +432,13 @@ input:focus{
   font-size: 1rem;
  }
  .close-btn {
-  padding: .2em .6em;
+  padding: 1em .6em;
   margin: 1em .2em;
   background-color: #e2e2e2;
   border: solid #777777;
   border-radius: 2px;
   color: #525252;
+  width: 100%;
  }
  .close-btn:hover {
   background-color: transparent;
@@ -433,7 +459,8 @@ input:focus{
     font-size: 2rem;
   }
   #main-banner img {
-    max-height: 400px;
+    max-height: 500px;
+    max-width: 900px;
     background-size: cover;
   }
   .cuisine-title {
@@ -448,6 +475,10 @@ input:focus{
   }
   .fa-location-dot {
     left: 93%;
+  }
+  #restaurant-item-modal {
+    max-height: 100vh;
+    max-width: 100vw;
   }
  }
  
