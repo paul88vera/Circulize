@@ -7,7 +7,7 @@
     "run all": "concurrently \"npm run server\" \"npm run client\" \"npm run watch:tailwind\"",
     "server": "cd server && nodemon server.js",
     "client": "cd client && react-scripts start",
-    "build": "cd client && react-scripts",
+    "build": "cd client && react-scripts build",
     "installer": "npm i",
     "watch:tailwind": "postcss -w client/src/tailwind.css -o client/src/tailwind.generated.css"
   },
