@@ -2,7 +2,7 @@
     "files.exclude": {
     "**/node_modules": true,
     "local": false,
-    "node_modules": true,
+    "node_modules": true
   },
   "cmake.configureOnOpen": false,
 }

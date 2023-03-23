@@ -1,5 +1,5 @@
 {
-  "name": "@circulize-app/rf-server",
+  "name": "@circulate-app/rf-server",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

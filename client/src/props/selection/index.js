@@ -26,7 +26,7 @@ export default function Selection(props) {
             onClick={() => handleClick(sel)}
           >
             <div className="cuisine-card-img">
-              <img src={sel.image} alt={sel.imgAlt} width="136" />
+              <img src={sel.image} alt={sel.imgAlt} width="137" />
             </div>
             <div className="cuisine-card-text">
               <h3>{sel.name}</h3>

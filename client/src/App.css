@@ -31,7 +31,7 @@ body {
 }
 .fa-location-dot {
   position: relative;
-  z-index: 9999;
+  z-index: 99;
   top:15px;
   left: 85%;
   color: #fff;
@@ -47,9 +47,11 @@ body {
 /*-------------------
     SPLASH - START
  -------------------*/
- #splash-container{
+ #splash-container {
   width: 100%;
   height: 100vh;
+  position: absolute;
+  top: 70px;
   background-image: url(/src/images/splash.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -479,6 +481,8 @@ input:focus{
   #restaurant-item-modal {
     max-height: 100vh;
     max-width: 100vw;
+  } #splash-container {
+    top: 90px;
   }
  }
  

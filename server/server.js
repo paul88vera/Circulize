@@ -5,7 +5,6 @@ const app = express(); // express server
 const mongoose = require("mongoose");
 const City = require("./models/city.js"); // City Schema
 const Restaurant = require("./models/restaurant"); // Restaurant Schema
-
 const PORT = 9000;
 
 // connect to db
@@ -15,7 +14,6 @@ try {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-  console.log("connected");
 } catch (err) {
   console.log(err);
 }
@@ -25,13 +23,14 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 // routes
-app.get("/cities", async (req, res) => res.json(await City.find()));
-app.post("/cities", submitCity);
-app.get("/restaurants", async (req, res) => res.json(await Restaurant.find()));
-app.get("/restaurants/:id", getRestaurantType);
-app.post("/restaurants", submitRestaurant);
+app.get("/api/cities", async (req, res) => res.json(await City.find()));
+app.post("/api/cities", submitCity);
+app.get("/api/restaurants", async (req, res) =>
+  res.json(await Restaurant.find())
+);
+app.get("/api/restaurant/:id", getRestaurantType);
+app.post("/api/restuarants", submitRestaurant);
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
 

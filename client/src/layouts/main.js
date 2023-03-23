@@ -13,13 +13,14 @@ import RestaurantPage from "../props/selection";
 
 export default function Layout() {
   const [selectionData, setSelectionData] = useState();
+
   useEffect(() => {
-    const fetchRestaurants = async () => {
-      fetch("http://localhost:9000/restaurants")
+    const fetchAllRestaurants = async () => {
+      fetch("http://localhost:9000/api/restaurants")
         .then((res) => res.json())
         .then((data) => setSelectionData(data));
     };
-    fetchRestaurants();
+    fetchAllRestaurants();
   }, []);
 
   if (selectionData) {
