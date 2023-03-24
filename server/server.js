@@ -58,7 +58,7 @@ async function submitRestaurant(req, res) {
 async function getRestaurantType(req, res) {
   try {
     const getRestaurant = await Restaurant.find({
-      cuisine: `${req.params.id}`,
+      type: `${req.params.id}`,
     });
     res.send(getRestaurant);
   } catch (err) {

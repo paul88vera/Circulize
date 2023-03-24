@@ -5,7 +5,6 @@ export default function Navbar() {
   const [menu, setMenu] = useState(false);
 
   function handleChange() {
-    console.log("clicked");
     setMenu((current) => !current);
   }
 
@@ -24,12 +23,15 @@ export default function Navbar() {
         <i className="fa-solid fa-bars"></i>
       </div>
       {menu && (
-        <div>
-          <Link to="/">
-            <i className="fa-solid fa-house burgerMenu"></i> Home
+        <div className="menu-container">
+          <div className="menu-close" onClick={handleChange}>
+            close X
+          </div>
+          <Link to="/" onClick={handleChange} className="burger-menu">
+            <i className="fa-solid fa-house"></i> Home
           </Link>
-          <Link to="/search">
-            <i className="fa-solid fa-magnifying-glass burgerMenu"></i> Search
+          <Link to="/search" onClick={handleChange} className="burger-menu">
+            <i className="fa-solid fa-magnifying-glass"></i> Search
           </Link>
         </div>
       )}
