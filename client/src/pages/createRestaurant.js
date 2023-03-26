@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import Banner from "../components/Banner";
 
 export default function AddRestaurant() {
   const {
@@ -38,6 +39,7 @@ export default function AddRestaurant() {
 
   return (
     <div className="cuisine-gallery" style={{ marginBottom: "3rem" }}>
+      <Banner />
       <h4 className="cuisine-title">Add a Restaurant</h4>
       <form
         id="restaurant-form"

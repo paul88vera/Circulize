@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
 import Home from "../pages/home";
 import Browse from "../pages/browse";
@@ -28,7 +27,6 @@ export default function Layout() {
       <BrowserRouter>
         <div className="h-screen w-screen">
           <Navbar />
-          <Banner />
           <Routes>
             <Route index path="/" element={<Home />} />
             <Route path="/search" element={<Splash />} />
