@@ -1,50 +1,66 @@
 require("dotenv").config();
 const express = require("express");
-const app = express();
+const cors = require("cors");
+const app = express(); // express server
 const mongoose = require("mongoose");
+const City = require("./models/city.js"); // City Schema
+const Restaurant = require("./models/restaurant"); // Restaurant Schema
+const PORT = 9000;
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true }, (err) =>
-  console.log(err)
+// connect to db
+// mongoose.connect(process.env.DATABASE_URL).then(e => 'Connected').catch(err => console.error(err));
+try {
+  mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+} catch (err) {
+  console.log(err);
+}
+
+// express server
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// routes
+app.get("/api/cities", async (req, res) => res.json(await City.find()));
+app.post("/api/cities", submitCity);
+app.get("/api/restaurants", async (req, res) =>
+  res.json(await Restaurant.find())
 );
+app.get("/api/restaurant/:id", getRestaurantType);
+app.post("/api/restuarants", submitRestaurant);
 
-app.listen(9000, () => console.log(`connected at 9000`));
+app.listen(PORT, () => console.log(`listening on port ${PORT}`));
 
-// app.use("/", city);
-
-// const User = require("./models/user");
-const City = require("./models/city");
-const Restaurant = require("./models/restaurant");
-
-// ONE user
-
-// ALL Cities
-getCities();
-async function getCities() {
+// Submit New City
+async function submitCity(req, res) {
   try {
-    const getMyCity = await City.find();
-    console.log(getMyCity);
+    const entry = new City(req.body);
+    await entry.save().then(() => res.send("City Submitted"));
   } catch (err) {
-    console.log(err.message);
+    console.error(err);
   }
 }
 
-// ONE City's Restaurants
-getCity("San Antonio");
-async function getCity(city) {
+// Submit New Restaurant
+async function submitRestaurant(req, res) {
   try {
-    const getMyCity = await City.find({ city: `${city}` });
-    console.log(getMyCity);
+    const entry = new Restaurant(req.body);
+    await entry.save().then(() => res.send("Restaurant Submitted"));
   } catch (err) {
-    console.log(err.message);
+    console.error(err);
   }
 }
 
-// ALL Restaurants in City
-getRestaurant();
-async function getRestaurant() {
+// Get all of one restaurant data
+async function getRestaurantType(req, res) {
   try {
-    const getOneRestaurant = await Restaurant.find();
-    console.log(getOneRestaurant);
+    const getRestaurant = await Restaurant.find({
+      type: `${req.params.id}`,
+    });
+    res.send(getRestaurant);
   } catch (err) {
     console.log(err.message);
   }

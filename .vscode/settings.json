@@ -1,0 +1,12 @@
+{
+    "files.exclude": {
+    "**/node_modules": true,
+    "local": false,
+    "node_modules": true,
+    "package.json":false,
+    "package-lock.json":false,
+    "tailwind.config.js":true,
+    "postcss.config.js":true
+  },
+  "cmake.configureOnOpen": false,
+}
