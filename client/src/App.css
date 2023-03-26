@@ -59,7 +59,7 @@ body {
  }
  .menu-close {
   position: relative;
-  top: -250px;
+  top: -100px;
   right: -180px;
   cursor: pointer;
   scale: 100%;
@@ -210,6 +210,7 @@ input:focus{
   background-size: cover;
   background-position-y: top;
   position: relative;
+  top: -260px;
   color: #fff;
 }
 #signup-form {
@@ -485,7 +486,10 @@ input:focus{
     width: 100%;
   }
 }
- @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+   #signup-container {
+     top: -410px
+   }
   .cuisine-type {
     max-width: 200px;
   }

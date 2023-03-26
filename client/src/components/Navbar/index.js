@@ -27,11 +27,17 @@ export default function Navbar() {
           <div className="menu-close" onClick={handleChange}>
             close X
           </div>
-          <Link to="/" onClick={handleChange} className="burger-menu">
-            <i className="fa-solid fa-house"></i> Home
+          <Link to="/login" onClick={handleChange} className="burger-menu">
+            <i class="fa-solid fa-right-to-bracket"></i> Login
           </Link>
           <Link to="/search" onClick={handleChange} className="burger-menu">
             <i className="fa-solid fa-magnifying-glass"></i> Search
+          </Link>
+          <Link to="/" onClick={handleChange} className="burger-menu">
+            <i className="fa-solid fa-house"></i> Home
+          </Link>
+          <Link to="/signup" onClick={handleChange} className="burger-menu">
+            <i class="fa-solid fa-pen-to-square"></i> Signup
           </Link>
         </div>
       )}
