@@ -7,13 +7,13 @@ export default function Restaurant({ data, closeModal }) {
         </picture>
         <div className="restaurant-details">
           <h2>{data.name}</h2>
-          <h4>{data.type}</h4>
+          <h4>{data.type} cuisine</h4>
           <br />
-          <p className="restaurant-para">{data.bio}</p>
+          <p className="restaurant-para">{data.description}</p>
         </div>
         <br />
         <div id="social-links">
-          <a href={data.tel} className="icon-container">
+          <a href={`tel:${data.tel}`} className="icon-container">
             <i className="fa-solid fa-mobile-screen-button"></i>
             <span>Phone</span>
           </a>
@@ -31,5 +31,5 @@ export default function Restaurant({ data, closeModal }) {
         </button>
       </div>
     </section>
-  );
+  )
 }

@@ -1,31 +1,31 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Home from "../pages/home";
-import Browse from "../pages/browse";
-import Login from "../pages/login";
-import Signup from "../pages/signup";
-import AddRestaurant from "../pages/createRestaurant";
-import Splash from "../pages/splash";
-import Error from "../pages/error";
-import RestaurantPage from "../props/selection";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import React, { useState, useEffect } from "react"
+import Navbar from "../components/Navbar"
+import Home from "../pages/home"
+import Browse from "../pages/browse"
+import Login from "../pages/login"
+import Signup from "../pages/signup"
+import AddRestaurant from "../pages/createRestaurant"
+import Splash from "../pages/splash"
+import Error from "../pages/error"
+import RestaurantPage from "../props/selection"
 
 export default function Layout() {
-  const [selectionData, setSelectionData] = useState();
+  const [selectionData, setSelectionData] = useState()
 
   useEffect(() => {
     const fetchAllRestaurants = async () => {
       fetch("http://localhost:9000/api/restaurants")
         .then((res) => res.json())
-        .then((data) => setSelectionData(data));
-    };
-    fetchAllRestaurants();
-  }, []);
+        .then((data) => setSelectionData(data))
+    }
+    fetchAllRestaurants()
+  }, [])
 
   if (selectionData) {
     return (
       <BrowserRouter>
-        <div className="h-screen w-screen">
+        <div className="h-sreen w-screen">
           <Navbar />
           <Routes>
             <Route index path="/" element={<Home />} />
@@ -62,6 +62,6 @@ export default function Layout() {
           </Routes>
         </div>
       </BrowserRouter>
-    );
+    )
   }
 }
