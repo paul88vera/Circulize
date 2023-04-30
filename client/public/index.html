@@ -7,8 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
-    />
+      content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,9 +23,14 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/6c5121ef02.js" crossorigin="anonymous"></script>
-    <title>Circulize</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <script
+      src="https://kit.fontawesome.com/6c5121ef02.js"
+      crossorigin="anonymous"></script>
+    <title>Circulate</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -43,16 +47,16 @@
     -->
     <script>
       if (navigator.serviceWorker.controller) {
-          console.log("Active service worker found");
-          } else {
-              navigator.serviceWorker
-              .register("serviceWorker.js", {
-              scope: "./"
-              })
-              .then(function (reg) {
-              console.log("Service worker  registered");
-              });
-          }
-        </script>
+        console.log("Active service worker found")
+      } else {
+        navigator.serviceWorker
+          .register("serviceWorker.js", {
+            scope: "./",
+          })
+          .then(function (reg) {
+            console.log("Service worker  registered")
+          })
+      }
+    </script>
   </body>
 </html>
