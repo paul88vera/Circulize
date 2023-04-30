@@ -1,13 +1,13 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-import Banner from "../components/Banner";
+import React from "react"
+import { useForm } from "react-hook-form"
+import Banner from "../components/Banner"
 
 export default function AddRestaurant() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
   const onSubmit = async (data) => {
     const send = {
@@ -25,17 +25,17 @@ export default function AddRestaurant() {
       img: data.img,
       imgAlt: data.imgAlt,
       map: data.map,
-    };
-    await fetch("http://localhost:9000/restaurants", {
+    }
+    await fetch("http://localhost:9000/api/restaurants", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(send),
     }).then(() => {
-      window.location.reload(false);
-    });
-  };
+      window.location.reload(false)
+    })
+  }
 
   return (
     <div className="cuisine-gallery" style={{ marginBottom: "3rem" }}>
@@ -45,6 +45,7 @@ export default function AddRestaurant() {
         id="restaurant-form"
         onSubmit={handleSubmit(onSubmit)}
         style={{ display: "grid", gridRowGap: "1rem" }}
+        className="bg-zinc-200 p-8 max-w-300 rounded"
       >
         <div>
           <label>Name</label>
@@ -83,15 +84,17 @@ export default function AddRestaurant() {
         </div>
         <div>
           <label>Bio</label>
-          <input type="text" {...register("bio", { required: true })} />
-          <label className={errors.hasOwnProperty("bio") ? "" : "hidden"}>
+          <input type="text" {...register("description", { required: true })} />
+          <label
+            className={errors.hasOwnProperty("description") ? "" : "hidden"}
+          >
             Bio Required
           </label>
         </div>
         <div>
           <label>Website</label>
-          <input type="text" {...register("web", { required: true })} />
-          <label className={errors.hasOwnProperty("web") ? "" : "hidden"}>
+          <input type="text" {...register("website", { required: true })} />
+          <label className={errors.hasOwnProperty("website") ? "" : "hidden"}>
             Website Required
           </label>
         </div>
@@ -140,14 +143,17 @@ export default function AddRestaurant() {
 
         <input
           type="submit"
-          style={{
-            marginTop: "8px",
-            padding: "5px",
-            backgroundColor: "limegreen",
-            fontWeight: "bold",
-          }}
+          style={
+            {
+              // marginTop: "8px",
+              // padding: "5px",
+              // backgroundColor: "bg-green-500",
+              // fontWeight: "bold",
+            }
+          }
+          className="bg-green-900 text-white rounded p-4"
         />
       </form>
     </div>
-  );
+  )
 }
